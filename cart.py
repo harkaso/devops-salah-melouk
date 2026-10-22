@@ -1,4 +1,4 @@
-TAX_RATE = 0.21
+TAX_RATE = 0.09
 
 def average(prices: list[int|float]) -> float:
     if not prices:
