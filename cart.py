@@ -1,6 +1,8 @@
 TAX_RATE = 0.19
 
 def average(prices: list[int|float]) -> float:
+    if not prices:
+        return 0
     return sum(prices) / len(prices)
 
 def total(prices: list[int|float]) -> float:
