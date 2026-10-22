@@ -4,7 +4,7 @@ TAX_RATE = 0.09
 
 def average(prices: Sequence[int|float]) -> float:
     if not prices:
-        return None
+        return 0
     return sum(prices) / len(prices)
 
 def total(prices: Sequence[int|float]) -> float:
