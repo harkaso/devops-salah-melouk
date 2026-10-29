@@ -1,5 +1,4 @@
 from collections.abc import Sequence
-from operator import le
 
 TAX_RATE = 0.09
 
