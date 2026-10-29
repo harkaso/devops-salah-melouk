@@ -1,4 +1,5 @@
 from collections.abc import Sequence
+from operator import le
 
 TAX_RATE = 0.09
 
@@ -13,3 +14,6 @@ def total(prices: Sequence[int|float]) -> float:
 
 def apply_discount(prices: Sequence[int|float], percent: int) -> Sequence[int|float]:
     return [price * (1 - percent/100) for price in prices]
+
+def count(prices: Sequence[int|float]) -> int:
+    return len(prices)
