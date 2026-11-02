@@ -20,6 +20,6 @@ def count(prices: Sequence[int|float]) -> int:
 
 def shipping(prices: Sequence[int|float]):
     """Shipping cost: free from 50, before taxes."""
-    if sum(prices) > FREE_SHIPPING_FROM:
+    if sum(prices) >= FREE_SHIPPING_FROM:
         return 0
     return 5
