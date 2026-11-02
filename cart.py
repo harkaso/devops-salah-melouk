@@ -1,6 +1,7 @@
 from collections.abc import Sequence
 
 TAX_RATE = 0.09
+FREE_SHIPPING_FROM = 50
 
 def average(prices: Sequence[int|float]) -> float:
     if not prices:
@@ -18,3 +19,9 @@ def apply_discount(prices: Sequence[int|float], percent: int) -> Sequence[int|fl
 
 def count(prices: Sequence[int|float]) -> int:
     return len(prices)
+
+def shipping(prices: Sequence[int|float]):
+    """Shipping cost: free from 50, before taxes."""
+    if sum(prices) >= FREE_SHIPPING_FROM:
+        return 0
+    return 5
