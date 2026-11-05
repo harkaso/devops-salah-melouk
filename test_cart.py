@@ -22,4 +22,4 @@ def test_discount_over_100_is_refused():
 
 def test_negative_discount_is_refused():
     with pytest.raises(ValueError):
-        apply_discount([100], -10)        
+        apply_discount([100], -10)
