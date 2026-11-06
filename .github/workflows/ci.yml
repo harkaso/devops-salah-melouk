@@ -9,9 +9,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
       - run: pip install -r requirements-dev.txt
-      - run: pytest
+      - run: pip check
+      - run: ruff check .
+      - run: ruff format --check .
+      - run: pyright
+      - run: pytest --cov=. --cov-report=term-missing
+      - run: pip-audit -r requirements-dev.txt
