@@ -3,24 +3,31 @@ from collections.abc import Sequence
 TAX_RATE = 0.09
 FREE_SHIPPING_FROM = 50
 
-def average(prices: Sequence[int|float]) -> float:
+
+def average(prices: Sequence[int | float]) -> float:
     if not prices:
         return 0
     return sum(prices) / len(prices)
 
-def total(prices: Sequence[int|float]) -> float:
-    """Cart total, taxes included."""
-    return round(sum(prices) * (1+ TAX_RATE), 2)
 
-def apply_discount(prices: Sequence[int|float], percent: int) -> Sequence[int|float]:
+def total(prices: Sequence[int | float]) -> float:
+    """Cart total, taxes included."""
+    return round(sum(prices) * (1 + TAX_RATE), 2)
+
+
+def apply_discount(
+    prices: Sequence[int | float], percent: int
+) -> Sequence[int | float]:
     if not 0 <= percent <= 100:
         raise ValueError("Discount percent must be between 0 and 100")
-    return [price * (1 - percent/100) for price in prices]
+    return [price * (1 - percent / 100) for price in prices]
 
-def count(prices: Sequence[int|float]) -> int:
+
+def count(prices: Sequence[int | float]) -> int:
     return len(prices)
 
-def shipping(prices: Sequence[int|float]):
+
+def shipping(prices: Sequence[int | float]):
     """Shipping cost: free from 50, before taxes."""
     if sum(prices) >= FREE_SHIPPING_FROM:
         return 0
