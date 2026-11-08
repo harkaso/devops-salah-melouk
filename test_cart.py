@@ -1,6 +1,7 @@
 import pytest
 
 from cart import apply_discount, average, shipping, total
+from stats import most_exepensive
 
 
 def test_average():
@@ -39,3 +40,13 @@ def test_discount_over_100_is_refused():
 def test_negative_discount_is_refused():
     with pytest.raises(ValueError):
         apply_discount([100], -10)
+
+
+def test_most_expensive():
+    assert most_exepensive([10, 50, 20]) == 50
+
+
+
+def test_most_expensive_empty_cart():
+    assert most_exepensive([]) is None
+    
