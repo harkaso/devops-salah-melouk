@@ -46,7 +46,5 @@ def test_most_expensive():
     assert most_exepensive([10, 50, 20]) == 50
 
 
-
 def test_most_expensive_empty_cart():
     assert most_exepensive([]) is None
-    
