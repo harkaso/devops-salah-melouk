@@ -30,7 +30,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: python build.py
-        uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v5
         with:
           path: site 
 
@@ -46,7 +46,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps: 
       - id: deployment
-        uses: actions/deploy-pages@v5
+      - uses: actions/deploy-pages@v5
 
 
 
