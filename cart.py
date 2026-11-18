@@ -1,6 +1,6 @@
 from collections.abc import Sequence
 
-TAX_RATE = 19
+TAX_RATE = 0.09
 FREE_SHIPPING_FROM = 50
 
 
